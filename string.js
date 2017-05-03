@@ -46,10 +46,18 @@ try{
     if(hasUpper == true){
       break;
     }
+    }
+    if(hasUpper == true){
+      throw new PasswordMessage("Has uppercase character")
+    }
     else{
-      
+      throw new PasswordMessage("Does not have uppercase character")
     }
   }
+
+  catch(e){
+      console.log(e.name+": "+e.message);
+      return hasUpper;
 }
 }
 
@@ -62,11 +70,17 @@ try{
     if(hasLower == true){
       break;
     }
-    else {
-
-    }
   }
+  if(hasLower == true){
+    throw new PasswordMessage("Has lowercase character")
+  }
+  else{
+    throw new PasswordMessage("Does not have lowercase character")
 }
+
+  catch(e){
+      console.log(e.name+": "+e.message);
+      return hasLower;
 }
 
 
@@ -78,14 +92,36 @@ try{
     if(hasNum == true){
       break;
     }
-  }
-    else{
-
-    }
 }
+
+if(hasNum == true){
+  throw new PasswordMessage("Has number character")
+}
+else{
+  throw new PasswordMessage("Does not have number character")
+}
+}
+catch(e){
+    console.log(e.name+": "+e.message);
+    return hasNum;
 }
 
 
 exports.containsSpecial =function(str){
-
+let hasSpecial = false;
+let special = [33,64,35,36,37,94,38,42];
+try{
+  for(let i=0; i<str.length; i++){
+    for(let j=0; j<special.length; j++){
+      hasSpecial = inRange(str[i],special[j],special[j]);
+      if(hasSpecial == true){
+        break;
+      }
+    }
+    if(hasSpecial == true){
+      break;
+    }
+  }
+    if(has)
+}
 }
