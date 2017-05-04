@@ -122,6 +122,16 @@ try{
       break;
     }
   }
-    if(has)
+    if(hasSpecial == true){
+      throw new PasswordMessage("Has special character")
+    }
+    else{
+      throw new PasswordMessage("Does not have special character")
+    }
+
+    catch(e){
+      console.log(e.name+": "+e.message);
+      return hasSpecial;
+    }
 }
 }
